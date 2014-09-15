@@ -1,0 +1,28 @@
+#jqt #timeline ul:first-child {
+  margin-top: 0;
+}
+#jqt #timeline {
+  opacity: 0.88;
+}
+#jqt #timeline .Progress {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: yellow;
+  height: 100%;
+}
+#jqt #timeline a.back:before {
+  display: none;
+}
+#home {
+  background-image: url('/public/img/background.jpg');
+}
+#jqt #timeline li small.counter {
+  background-color: #A9F5A9;
+  color: #243B0B;
+  text-shadow: none;
+}
+#jqt #timeline li small.Date {
+  font-size: 0.67em;
+  text-shadow: none;
+}

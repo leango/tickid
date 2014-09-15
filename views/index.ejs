@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="/public/css/innsbruck.min.css" data-jqt-theme>
+<link rel="stylesheet" href="/public/css/index.css">
+<script type="text/javascript" src="/public/js/zepto.min.js"></script>
+<script type="text/javascript" src="/public/js/zepto.deferred.js"></script>
+<script type="text/javascript" src="/public/js/zepto.callbacks.js"></script>
+<script type="text/javascript" src="/public/js/jqt.min.js"></script>
+<script src="http://cdn.staticfile.org/underscore.js/1.6.0/underscore-min.js" type="text/javascript"></script>
+<script src="http://cdn.staticfile.org/backbone.js/1.1.2/backbone.js" type="text/javascript"></script>
+<script src="http://cdn.staticfile.org/backbone.marionette/1.8.8/backbone.marionette.js" type="text/javascript"></script>
+<script type="text/javascript" src="/public/js/index.js"></script>
+</head>
+<body>
+  <div id="jqt">
+    <div id="home">
+      <div id="title"></div>
+      <div id="timeline"></div>
+    </div>
+  </div>
+  <script type="text/template" id="dailytick-template">
+    <div class="Progress" style="width: <%= ticks*20 %>%; opacity: <%= ticks / 5%>"></div>
+    <a><small class="counter"><%=ticks%></small><small class="Date"><%=dateStr%></small></a>
+  </script>
+  <script type="text/template" id="toolbar-template">
+    <a id="next-month" class="leftButton button">下个月</a>
+    <h1>成长日历 <small><%= year%>年<%= month%>月</small></h1>
+    <a id="prev-month" class="button">上个月</a>
+  </script>
+  <script type="text/template" id="timeline-template">
+  </script>
+</body>
+</html>
