@@ -3,6 +3,7 @@ var wechat = require('wechat');
 var path = require('path');
 var app = express();
 var ejs = require('ejs');
+var morgan = require('morgan');
 ejs.open = '{{';
 ejs.close = '}}';
 
@@ -15,6 +16,7 @@ mongoose.connect(settings.mongodbUrl);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.engine('ejs', ejs.__express);
+app.use(morgan('combined'));
 app.use('/public', express.static(path.join(__dirname, 'assets')));
 app.use('/wechat', express.query(), wechat(settings.wechatToken, settings.calendarUrl));
 app.get('/', function(req, res) {
