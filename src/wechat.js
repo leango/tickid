@@ -51,8 +51,8 @@ module.exports = function(token, calendarUrl) {
   function eventHandler(msg, req, res, next) {
     if (msg.Event === 'subscribe') {
       res.reply([{
-        title: '宝宝成长日历',
-        description: '如何使用',
+        title: '感谢您的关注',
+        description: '宝宝成长日历：一个帮助您记录宝宝点滴成长的工具',
         picurl: 'http://mmbiz.qpic.cn/mmbiz/AvNDCbwG0OfpT894N00eqlXegZ3KSShBZP2sCU4VJKsWic2EYpYAoAicq8b1ia0YbGqWLvd65PCnlRXmcH00j8XibA/0',
         url: 'http://mp.weixin.qq.com/s?__biz=MzA5Njk5NTYzNg==&mid=200889720&idx=1&sn=69bea80c1406c0d0d8faa9d0bb2d06c3'
       }]);
