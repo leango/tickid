@@ -5,7 +5,7 @@ var g_contentReg = /^(\/::\)|\/::~|\/::B|\/::\||\/:8-\)|\/::<|\/::$|\/::X|\/::Z|
 
 module.exports = function(token, calendarUrl) {
 
-  return wechat(token, wechat.text(textHandler));
+  return wechat(token, wechat.text(textHandler).event(eventHandler));
 
   function textHandler(msg, req, res, next) {
     var content = msg.Content.trim();
@@ -47,6 +47,18 @@ module.exports = function(token, calendarUrl) {
     tick.save(function() {
       res.reply('您的宝宝表现很好');
     });
+  }
+  function eventHandler(msg, req, res, next) {
+    if (msg.Event === 'subscribe') {
+      res.reply([{
+        title: '宝宝成长日历',
+        description: '如何使用',
+        picurl: 'http://mmbiz.qpic.cn/mmbiz/AvNDCbwG0OfpT894N00eqlXegZ3KSShBZP2sCU4VJKsWic2EYpYAoAicq8b1ia0YbGqWLvd65PCnlRXmcH00j8XibA/0',
+        url: 'http://mp.weixin.qq.com/s?__biz=MzA5Njk5NTYzNg==&mid=200889720&idx=1&sn=69bea80c1406c0d0d8faa9d0bb2d06c3'
+      }]);
+      return;
+    }
+    next();
   }
 }
 
